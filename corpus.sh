@@ -1,5 +1,4 @@
 #!/bin/bash
-
 mkdir -p output
 set -a
 source .env
@@ -33,3 +32,14 @@ sed -E \
 > output/mails-clean.txt
 
 python chardict.py output/mails-clean.txt > output/mails.json
+
+## Slack
+jq -r '.[].items[].messages[].blocks[]?.elements[].elements[].text?' ./input/slack.json > output/slack-raw.txt
+sed -E \
+	-e 's/^null$//g' \
+	-e 's/[[:alnum:]]*[[:digit:]]+[[:alnum:]]*/ /g' \
+	-e 's/[^[:alnum:]]+/ /g' \
+	-e 's/[[:space:]]+/ /g' \
+	output/slack-raw.txt \
+> output/slack-clean.txt
+python chardict.py output/slack-clean.txt > output/slack.json
