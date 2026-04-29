@@ -74,3 +74,30 @@ sed -E \
 	output/jira-raw.txt \
 > output/jira-clean.txt
 python chardict.py output/jira-clean.txt > output/jira.json
+
+function process_source_dirs() {
+	for dir in $@; do
+		pushd $dir > /dev/null
+		find . \( \
+			-name '*.ts' \
+			-o -name '*.md' \
+			-o -name '*.scss' \
+			-o -name '*.html' \
+			-o -name '*.py' \
+			-o -name '*.kt' \
+		\) -print0 \
+			| xargs -0 cat \
+			| grep -oE '[[:alpha:]]+'
+		popd > /dev/null
+	done
+}
+
+# UI Pro
+if [ ! -f "output/uipro.json" ]; then
+	rm -f output/uipro.json output/uipro-raw.txt
+	rawfilepath="`pwd`/output/uipro-raw.txt"
+	pushd ~/workspace/delair-stack/uipro/uipro
+	process_source_dirs libs docs >> "$rawfilepath"
+	popd
+	python chardict.py output/uipro-raw.txt > output/uipro.json
+fi
