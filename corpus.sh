@@ -151,3 +151,29 @@ fi
 if [ ! -f "output/bash.json" ]; then
 	python chardict.py input/bash_history.txt > output/bash.json
 fi
+
+# Merge
+## Code
+python merge_json_avg.py \
+	output/analytics-service.json \
+	output/code-keywords.json \
+	output/kotlin.json \
+	output/python-scripts.json \
+	output/uipro.json \
+	-o output/code.json
+## Tech: code + jira + bash
+python merge_json_avg.py \
+	output/code.json \
+	output/jira.json \
+	output/bash.json \
+	-o output/tech.json
+## Text: mails + slack
+python merge_json_avg.py \
+	output/mails.json \
+	output/slack.json \
+	-o output/text.json
+## All: text + tech
+python merge_json_avg.py \
+	output/tech.json \
+	output/text.json \
+	-o output/all.json
