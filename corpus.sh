@@ -43,3 +43,34 @@ sed -E \
 	output/slack-raw.txt \
 > output/slack-clean.txt
 python chardict.py output/slack-clean.txt > output/slack.json
+
+# Jira
+if [ ! -f "output/jira-raw.txt" ]; then
+	python jira_fetcher.py > output/jira-raw.txt
+fi
+sed -E \
+	-e 's/\{[^[:space:]]+\}//g' \
+	-e 's/\*?\[ [^[:space:]]+ \]\*?//g' \
+	-e 's/Client \(Alteia \/ GE\) ://g' \
+	-e 's/Platform \(DEV \/ STAG \/ PROD\) ://g' \
+	-e 's/Users role ://g' \
+	-e 's/\(\?\) \*Steps to reproduce\*//g' \
+	-e 's/\(x\) \*Actual result \(symptoms\)\*//g' \
+	-e 's/\(\/\) \*Expected result\*//g' \
+	-e 's/^\*Environment\*//g' \
+	-e 's/^Client[[:space:]]*:.*$//g' \
+	-e 's/^Platform[[:space:]]*:.*$//g' \
+	-e 's/to_complete//g' \
+	-e 's/^!.+!$//g' \
+	-e 's/\[.*http.+\]//g' \
+	-e 's/\[\^.+\]//g' \
+	-e 's#<?https?://[^[:space:]<>]+>?# #g' \
+	-e 's/^npm .+//g' \
+	-e 's/^Feb  ,.*//g' \
+	-e 's/[[:alnum:]]*[[:digit:]]+[[:alnum:]]*/ /g' \
+	-e 's/[^[:alnum:]]+/ /g' \
+	-e 's/[[:space:]]+/ /g' \
+	-e '/^[[:space:]]*$/d' \
+	output/jira-raw.txt \
+> output/jira-clean.txt
+python chardict.py output/jira-clean.txt > output/jira.json

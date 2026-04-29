@@ -12,6 +12,11 @@
 			"console": "integratedTerminal",
 			"envFile": "${workspaceFolder}/.env",
 		},
+		{
+			"name": "Jira",
+			"type": "debugpy",
+			"request": "launch",
+			"program": "jira_fetcher.py",
 			"console": "integratedTerminal",
 			"envFile": "${workspaceFolder}/.env",
 		}
