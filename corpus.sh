@@ -111,3 +111,15 @@ if [ ! -f "output/analytics-service.json" ]; then
 	popd
 	python chardict.py output/analytics-service-raw.txt > output/analytics-service.json
 fi
+
+# python scripts
+if [ ! -f "output/python-scripts.json" ]; then
+	rm -f output/python-scripts.json output/python-scripts-raw.txt
+	rawfilepath="`pwd`/output/python-scripts-raw.txt"
+	pushd ~/workspace/fabien.mairesse/python-scripts
+	mv venv ../venv-python-scripts
+	process_source_dirs . >> "$rawfilepath"
+	mv ../venv-python-scripts ./venv
+	popd
+	python chardict.py output/python-scripts-raw.txt > output/python-scripts.json
+fi
