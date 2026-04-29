@@ -101,3 +101,13 @@ if [ ! -f "output/uipro.json" ]; then
 	popd
 	python chardict.py output/uipro-raw.txt > output/uipro.json
 fi
+
+# analytics-service
+if [ ! -f "output/analytics-service.json" ]; then
+	rm -f output/analytics-service.json output/analytics-service-raw.txt
+	rawfilepath="`pwd`/output/analytics-service-raw.txt"
+	pushd ~/workspace/delair-stack/analytics-service
+	process_source_dirs src docs >> "$rawfilepath"
+	popd
+	python chardict.py output/analytics-service-raw.txt > output/analytics-service.json
+fi
