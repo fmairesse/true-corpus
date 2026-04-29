@@ -123,3 +123,16 @@ if [ ! -f "output/python-scripts.json" ]; then
 	popd
 	python chardict.py output/python-scripts-raw.txt > output/python-scripts.json
 fi
+
+# kotlin
+if [ ! -f "output/kotlin.json" ]; then
+	rm -f output/kotlin.json output/kotlin-raw.txt
+	rawfilepath="`pwd`/output/kotlin-raw.txt"
+	pushd ~/workspace/delair-stack
+	process_source_dirs \
+		alteia-infield/app/src/main/java \
+		alteia-capture/app/src/main/java \
+	>> "$rawfilepath"
+	popd
+	python chardict.py output/kotlin-raw.txt > output/kotlin.json
+fi
