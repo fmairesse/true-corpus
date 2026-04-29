@@ -177,3 +177,6 @@ python merge_json_avg.py \
 	output/tech.json \
 	output/text.json \
 	-o output/all.json
+
+# Filter ngrams
+python filter_ngrams.py output/all.json 0.0099 -o output/fma.json
