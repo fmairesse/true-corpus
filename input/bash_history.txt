@@ -1,0 +1,828 @@
+qmk flash  kb delast  km default
+exit
+devstartuipro 
+exit
+cd loca  
+dc ps
+dc down
+cd   
+yarn loca 
+cd loca  
+dc up
+dc down
+dc up
+dc ps
+dc down
+cd   
+yarn loca 
+cd loca  
+dc up
+dc down
+exit
+yed
+gfi 
+gfi 
+exit
+gfi 
+
+gh 
+gfi
+gri
+gra
+git rebase
+git co fmairesse
+git push origin fmairesse
+git push fmairesse fmairesse 
+git co main
+git reset   hard origin main
+git pull
+qmk flash  kb delast  km default
+
+
+gfi 
+gri dev
+
+git amend
+
+git amend
+git ci
+git stash pop
+devstartuipro 
+yed
+git stash  wip upload 
+
+gfi
+exit
+
+git rebase
+
+git reset HEAD 
+git ci  keyboards  permissive hold for delast 
+git ci  wip  renamed to 
+grc
+grc 
+gri 
+gra
+gri 
+gra
+gri 
+git ci  keymaps  remove 
+gri 
+git reset HEAD 
+git ci  delast  vial screenshot 
+grc
+gra
+git ci  delast  vial screenshot 
+gri 
+git reset HEAD 
+git ci  chore  settings json 
+git ci  delast  vial screenshot 
+git ci  delast   
+grc
+git co  
+
+git amend
+skalog analytics service
+exit
+node
+devstartanalytics 
+loadcodeartifact 
+devstartanalytics 
+loadcodeartifact 
+loadcodeartifact 
+devstartanalytics 
+exit
+git push
+exit
+skanamespace pierre
+ephenvmongourl
+echo  
+reloadaliases 
+skanamespace pierre
+echo  
+ephenvmongourl
+skanamespace pierre
+git pull
+exit
+kcportmfma 
+exit
+reloadaliases 
+kcportmpie 
+reloadaliases 
+kcportmpie 
+exit
+cdw
+cd analytics service
+git co master
+git pull
+git co DAI update endpoints tm
+kcportm 
+exit
+cd   
+cd klayouts kanata 
+kanata qwerty angle mod kbd 
+kanata qwerty kbd 
+exit
+cdw 
+cd    fabien mairesse keeb 
+ls
+git clone 
+cd kanata 
+
+cargo build
+ls
+ls   bin 
+mv   bin kanata   bin kanata bak
+mv target debug kanata   bin 
+kanata   version
+exit
+
+
+
+devstartuipro 
+exit
+dc ps
+dc ps
+cd loca  
+dc up
+gfi 
+
+git amend
+git remote prune origin
+git br
+git br DAI goto product
+git br DAI qc config view
+git br DAI datastudio gcp module
+git stash list
+
+gfi
+gf 
+node
+
+git amend
+gri def
+gri dev
+gpr dev
+gpf
+dc down
+exit
+gfi 
+
+
+git ci
+exit
+
+gfi 
+
+git ci
+gri dev
+git co dev
+git pull
+git reset   hard origin dev
+git co  
+git rebase dev
+git rebase   skip
+grc
+gpf
+cd kanata 
+kanata qwerty angle mod kbd 
+devstartuipro 
+exit
+loadcodeartifact 
+yarn
+cd loca  
+dc down
+exit
+
+
+git amend
+git co dev
+git  pull
+git reset   hard HEAD 
+git co  
+git rebase dev
+git rebase   skip
+gri dev
+
+gri dev
+
+gfi
+git reset HEAD 
+gh 
+gfi
+
+gfi 
+exit
+
+git pull
+git hist grep 
+
+git fetch origin
+git co DAI 
+git co DAI process gateway 
+
+cdw
+cd    fabien mairesse keeb klayouts 
+gri 
+gra
+gri 
+gri 
+grc
+gri 
+git br
+git co hrm kanata 
+git reset   hard main
+git co  
+git reset   HEAD 
+git reset   hard HEAD 
+exit
+
+git pull
+git push
+git co master
+git pull
+git co   DAI product conf subco
+git co DAI product conf subco
+devstartanalytics 
+
+npm run test product spec
+devstartanalytics 
+exit
+skalog analytics service
+clear    skalog analytics service
+clear    skalog   tail analytics service
+clear    skalog analytics service   tail 
+
+skalog analytics service
+exit
+alteia
+python  pip install alteia cli
+alteai
+altei
+pyenv
+pyenv versions
+pyenv shell   
+python    version
+python  pip install alteia cli
+alteia
+python alteia
+python   version
+git push origin DAI product conf subco
+kcportm 
+kcportmfma 
+exit
+alteia
+alteia   help
+alteia products   help
+alteia products list
+alteia products list   help
+alteia product log 
+alteia products log 
+exit
+git co main
+git co master
+git pull
+git br
+git br DAI analytic quality gate 
+git co DAI product conf subco
+git push origin DAI product conf subco
+git amend
+gpf
+git br
+git co delast
+git co  
+git br
+git co delast
+git reset   hard 
+git co delast
+git co fmairesse
+qmk config
+qmk compile
+
+git co  
+git co wireless playground 
+
+git co  
+git co fmairesse
+
+git reset   hard HEAD 
+git cherry pick 
+git cherry pick 
+git cherry pick   abort
+
+git cherry pick 
+qmk compile
+qmk config
+qmk compile
+qmk compile  km default
+qmk config
+git co wireless playground 
+qmk compile
+git co  
+qmk compile
+qmk compile  km default
+git co  
+qmk compile  km default
+clear
+qmk compile  km default
+git reset   hard
+git co wireless playground 
+
+gfi
+git co delast 
+git co  
+qmk compile
+git submodule update
+qmk compile
+qmk flash
+
+gfi
+gfi
+gri
+kcportm 
+exit
+kcportmfma 
+exit
+skalog analytics service
+exit
+cdw
+cd analytics service
+git co master
+git pull
+git merge FMA snyk 
+git push
+git br
+git co DAI product conf subco
+git rebase master
+gpf
+git co master
+git br
+git pull
+git br DAI product conf subco
+git br
+git br DAI fail outputs expected missing
+git co DAI update endpoints tm
+git pull
+git rebase master
+gpf 
+git co master
+git co   
+git co
+git reset   hard   
+ master
+gh master
+git cherry pick  
+git cherry pick  
+git cherry pick  
+
+gh 
+git reset   hard   
+git cherry pick  
+git cherry pick   abort
+git cherry pick 
+gh 
+git push origin   
+exit
+
+
+git push
+
+gs
+git push
+npm run format
+gpf
+gs
+gpf
+npm run format
+gs
+gpf
+git co master
+git pull
+loadcodeartifact 
+npm install
+git co FMA snyk
+git co FMA snyk
+git rebase master
+npm install
+rm   rf node modules 
+npm install
+
+gfi
+git rebase master
+gpf
+git push origin FMA snyk
+git ci   amend
+gpf
+
+npm install
+git amend
+gpf
+rm package lock json 
+npm install
+git add package lock json 
+git amend
+gpf
+npm install
+git add package lock json 
+git amend
+gpf
+
+gri dev
+gfi 
+gri dev
+
+git ci   amend
+grc
+git ci   amend
+gpr dev
+gpf
+git push origin  DAI advanced photogra enforce 
+cd loca  
+dc ps
+dc down
+exit
+devstartuipro 
+exit
+cd keymaps 
+git submodule update
+qmk compile  kc delast  km default
+history grep delast
+qmk compile  kb delast  km default
+qmk flash  kb delast  km default
+
+cd keymaps 
+
+git co wireless playground 
+
+git amend
+git reset HEAD 
+git amend
+git push fmairesse
+git remote list
+git remote
+git remote
+git remote get url origin
+gpf
+git co   
+git co  
+qmk compile
+clear
+qmk compile
+clean    qmk compile
+clear    qmk compile
+qmk flash
+git co
+git co  
+
+git amend
+git co  
+qmk flash
+git amend
+qmk flash
+git co  
+qmk compile kb delast 
+qmk compile  kb delast 
+qmk compile  kb delast  kc default
+qmk compile  kb delast  km default
+git submodule update
+qmk compile  kb delast  km default
+
+git commit   amend
+qmk flash  kb delast  km default
+
+git amend
+qmk flash  kb delast  km default
+devstartuipro 
+exit
+cd loca  
+dc ps
+git br
+git stash list
+git co rename deliverable 
+git rebaseDev
+git rebase dev
+git rebase   skip
+
+git ci   amend
+git remote prune origin
+git co dev
+git pull
+git co  
+git rebase dev
+gri dev
+git br rename deliverable bak
+git reset HEAD 
+git co  
+git br
+git merge DAI rename deliverable
+git push
+git co DAI photogra engine allowed
+git rebase dev
+gpf
+dc down
+exit
+
+git co dev
+git pull
+git ci
+git co dev
+git merge rename deliverable
+git push
+git reset HEAD 
+gpf
+gpf   no verify
+
+gpf   no verify
+git co  
+git reset    hard HEAD 
+git co  
+git br DAI rename deliverable
+git push origin DAI rename deliverable
+git br
+git co DAI photogra engine allowed
+git br DAI datastudio gcp module
+git co DAI datastudio gcp module
+git rebase dev
+git rebase   skip
+
+git co dev
+git pull
+git reset   hard origin dev
+git co  
+git rebase dev
+dit co  
+git co  
+git br DAI datastudio gcp module
+git br
+git co DAI photogra engine allowed
+git amend
+git co wireless playground 
+qmk flash
+
+git amend
+git co  
+git submodule update
+git flash  kb delast  km default
+qmk flash  kb delast  km default
+cd keymaps
+cd keymaps
+
+
+gfi
+qmk flash  kb delast  km default
+
+cd keymaps 
+
+
+actvenv
+cd scripts 
+ 
+
+cp share githooks   git hooks 
+ls  git hooks 
+mv  git hooks githooks *  git hooks 
+ls  git hooks 
+rmdir  git hooks githooks 
+brew install klint
+chmod    git hooks pre push
+exit
+cd keymaps
+ls
+qmk flash
+
+gfi
+git co  
+qmk flash
+
+git amend
+git co 
+git co  
+qmk flash  kb delast  km default
+git submodule update
+qmk flash  kb delast  km default
+
+git co wireless playground 
+
+git amend
+git co  
+
+cd keymaps
+git push origin DAI terms conditions
+klint
+history grep klint
+git push origin DAI terms conditions
+klint
+brew install ktlint
+git push origin DAI terms conditions
+ktlint   version
+loadcodeartifact 
+ktlint
+ktlint   help
+git push origin DAI terms conditions
+loadcodeartifact 
+ps
+exit
+  
+  
+exit
+nano    gradle gradle properties
+cdw
+cd alteia infield 
+cd  git hooks 
+ll
+nano pre push
+cd       
+cd    alteia capture 
+cp share githooks pre push  git hooks 
+nano  git hooks pre push
+exit
+gfi 
+gfi 
+
+cd keymaps 
+
+git submodule update
+qmk compile  kb delast  km default
+qmk flash  kb delast  km default
+
+cd keymaps 
+
+git reset HEAD 
+qmk flash  kb delast  km default
+
+git reset HEAD 
+git amend
+gpf
+studio  
+cd keymaps 
+adb devices
+git reset   hard HEAD 
+git co  
+exit
+cd   
+cd klayouts keymaps 
+kalamine watch qzertyl toml 
+ls 
+git co  
+git br
+git co DAI zone details compose 
+gs
+git co  DAI zone details compose 
+
+
+git reset HEAD 
+git reset   hard 
+gs
+git push
+gri master
+
+git reset HEAD 
+gpf
+
+git reset  HEAD 
+studio 
+exit
+gfi 
+git amend
+cd keymaps 
+git reset HEAD 
+git reflog
+
+git amend 
+qmk flash  kb delast  km default 
+
+gpf
+git push   set upstream origin DAI zone details compose
+git push origin  DAI zone details compose
+git br DAI zone content compose
+git push DAI zone content compose
+git push origin DAI zone content compose
+gpf
+git co DAI collection point compose
+qmk flash  kb delast  km default
+cd keymaps
+kalamine watch exp toml 
+qmk flash  kb delast  km default 
+
+
+cd  home fabien workspace delair stack uipro uipro
+
+
+cd  home fabien workspace delair stack uipro uipro
+wc corpus txt
+ls  lh corpus txt
+
+
+cd  home fabien workspace delair stack uipro uipro
+wc corpus txt
+ls  lh corpus txt
+wc  corpus txt
+ls  lh corpus txt
+head  corpus txt; echo
+qmk flash  kb delast  km default 
+
+  corpus sh
+chmod   corpus sh
+  corpus sh
+rg
+  corpus sh
+python corpus analyze py 
+  corpus sh
+
+
+wc corpus txt
+ls  lh corpus txt
+head corpus txt; echo
+
+git br
+
+git co  
+git co   shift thumbs
+git co  
+
+git reset   har 
+git co   
+git co  
+qmk flash
+
+
+actvenv 
+python venv
+python venv    helpo
+rm  rf helpo
+python venv   help
+python venv venv
+actvenv
+nano    config pip pip conf 
+pip install
+python
+python process mailbox py fabien mairesse lapetitemaisondanslaprairie
+hsitory
+history
+history
+history
+history
+exit
+studio 
+exit
+git push
+git push   set upstream origin DAI collection point compose
+clear
+clear 
+kill  
+ps
+exit
+python
+
+python
+python read sent gmail py 
+python
+python read sent gmail py 
+python
+
+studio  
+eexit
+exit
+sed
+
+gh 
+gri
+git co DAI refactor vm
+git co   
+
+gfi
+git co  
+git rebase DAI collection point compose
+gs
+git reset
+
+gs
+gfi
+git reset HEAD 
+nano    profile 
+nano    bashrc 
+nano    bash aliases 
+nano bin studio 
+exit
+chmod   corpus sh 
+  corpus sh 
+python read sent gmail py 
+  corpus sh 
+
+  corpus sh 
+pip install requirements txt 
+
+python fetch slack py 
+set
+set
+source  env
+echo  SLACK BOT TOKEN
+python fetch slack py 
+mkdir output
+mkdir   help
+mkdir output
+source  env
+set
+source  env
+python fetch slack py 
+cd input

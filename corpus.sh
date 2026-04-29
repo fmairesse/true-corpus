@@ -146,3 +146,8 @@ if [ ! -f "output/code.json" ]; then
 	> output/code-keywords-clean.txt
 	python chardict.py output/code-keywords-clean.txt > output/code-keywords.json
 fi
+
+# Bash history
+if [ ! -f "output/bash.json" ]; then
+	python chardict.py input/bash_history.txt > output/bash.json
+fi
