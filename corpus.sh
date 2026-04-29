@@ -136,3 +136,13 @@ if [ ! -f "output/kotlin.json" ]; then
 	popd
 	python chardict.py output/kotlin-raw.txt > output/kotlin.json
 fi
+
+# Code keywords
+if [ ! -f "output/code.json" ]; then
+	rm -f output/code.json output/code-clean.txt
+	sed -E \
+		-e 's/^===.*//g' \
+		input/code.txt \
+	> output/code-keywords-clean.txt
+	python chardict.py output/code-keywords-clean.txt > output/code-keywords.json
+fi
