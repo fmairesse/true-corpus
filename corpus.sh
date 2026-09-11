@@ -4,7 +4,7 @@ set -a
 source .env
 
 ## Mail
-if [ ! -f "output/mails.json" ]; then
+if [ ! -f "output/mails-clean.txt" ]; then
 	# Get raw mails
 	if [ ! -f "output/mails-raw.txt" ]; then
 		(python gmail.py \
@@ -37,8 +37,10 @@ if [ ! -f "output/mails.json" ]; then
 fi
 
 ## Slack
-if [ ! -f "output/slack.json" ]; then
+if [ ! -f "output/slack-raw.txt" ]; then
 	jq -r '.[].items[].messages[].blocks[]?.elements[].elements[].text?' ./input/slack.json > output/slack-raw.txt
+fi
+if [ ! -f "output/slack-clean.txt" ]; then
 	sed -E \
 		-e 's/^null$//g' \
 		-e 's/[[:alnum:]]*[[:digit:]]+[[:alnum:]]*/ /g' \
@@ -50,10 +52,10 @@ if [ ! -f "output/slack.json" ]; then
 fi
 
 # Jira
-if [ ! -f "output/jira.json" ]; then
-	if [ ! -f "output/jira-raw.txt" ]; then
-		python jira_fetcher.py > output/jira-raw.txt
-	fi
+if [ ! -f "output/jira-raw.txt" ]; then
+	python jira_fetcher.py > output/jira-raw.txt
+fi
+if [ ! -f "output/jira-clean.txt" ]; then
 	sed -E \
 		-e 's/\{[^[:space:]]+\}//g' \
 		-e 's/\*?\[ [^[:space:]]+ \]\*?//g' \
@@ -82,70 +84,8 @@ if [ ! -f "output/jira.json" ]; then
 	python chardict.py output/jira-clean.txt > output/jira.json
 fi
 
-function process_source_dirs() {
-	for dir in $@; do
-		pushd $dir > /dev/null
-		find . \( \
-			-name '*.ts' \
-			-o -name '*.md' \
-			-o -name '*.scss' \
-			-o -name '*.html' \
-			-o -name '*.py' \
-			-o -name '*.kt' \
-		\) -print0 \
-			| xargs -0 cat \
-			| grep -oE '[[:alpha:]]+'
-		popd > /dev/null
-	done
-}
-
-# UI Pro
-if [ ! -f "output/uipro.json" ]; then
-	rm -f output/uipro.json output/uipro-raw.txt
-	rawfilepath="`pwd`/output/uipro-raw.txt"
-	pushd ~/workspace/delair-stack/uipro/uipro
-	process_source_dirs libs docs >> "$rawfilepath"
-	popd
-	python chardict.py output/uipro-raw.txt > output/uipro.json
-fi
-
-# analytics-service
-if [ ! -f "output/analytics-service.json" ]; then
-	rm -f output/analytics-service.json output/analytics-service-raw.txt
-	rawfilepath="`pwd`/output/analytics-service-raw.txt"
-	pushd ~/workspace/delair-stack/analytics-service
-	process_source_dirs src docs >> "$rawfilepath"
-	popd
-	python chardict.py output/analytics-service-raw.txt > output/analytics-service.json
-fi
-
-# python scripts
-if [ ! -f "output/python-scripts.json" ]; then
-	rm -f output/python-scripts.json output/python-scripts-raw.txt
-	rawfilepath="`pwd`/output/python-scripts-raw.txt"
-	pushd ~/workspace/fabien.mairesse/python-scripts
-	mv venv ../venv-python-scripts
-	process_source_dirs . >> "$rawfilepath"
-	mv ../venv-python-scripts ./venv
-	popd
-	python chardict.py output/python-scripts-raw.txt > output/python-scripts.json
-fi
-
-# kotlin
-if [ ! -f "output/kotlin.json" ]; then
-	rm -f output/kotlin.json output/kotlin-raw.txt
-	rawfilepath="`pwd`/output/kotlin-raw.txt"
-	pushd ~/workspace/delair-stack
-	process_source_dirs \
-		alteia-infield/app/src/main/java \
-		alteia-capture/app/src/main/java \
-	>> "$rawfilepath"
-	popd
-	python chardict.py output/kotlin-raw.txt > output/kotlin.json
-fi
-
 # Code keywords
-if [ ! -f "output/code.json" ]; then
+if [ ! -f "output/code-keywords-clean.txt" ]; then
 	rm -f output/code.json output/code-clean.txt
 	sed -E \
 		-e 's/^===.*//g' \
@@ -154,36 +94,25 @@ if [ ! -f "output/code.json" ]; then
 	python chardict.py output/code-keywords-clean.txt > output/code-keywords.json
 fi
 
-# Bash history
-if [ ! -f "output/bash.json" ]; then
-	python chardict.py input/bash_history.txt > output/bash.json
+# Prompts
+if [ ! -f "output/prompts-clean.txt" ]; then
+	sed -E \
+		-e 's/^null$//g' \
+		-e 's/[[:alnum:]]*[[:digit:]]+[[:alnum:]]*/ /g' \
+		-e 's/[^[:alnum:]]+/ /g' \
+		-e 's/[[:space:]]+/ /g' \
+		input/prompts.txt \
+	> output/prompts-clean.txt
+	python chardict.py output/prompts-clean.txt > output/prompts.json
 fi
 
-# Merge
-## Code
-python merge_json_avg.py \
-	output/analytics-service.json \
-	output/code-keywords.json \
-	output/kotlin.json \
-	output/python-scripts.json \
-	output/uipro.json \
-	-o output/code.json
-## Tech: code + jira + bash
-python merge_json_avg.py \
-	output/code.json \
-	output/jira.json \
-	output/bash.json \
-	-o output/tech.json
-## Text: mails + slack
-python merge_json_avg.py \
-	output/mails.json \
-	output/slack.json \
-	-o output/text.json
-## All: text + tech
-python merge_json_avg.py \
-	output/tech.json \
-	output/text.json \
-	-o output/all.json
+cat output/mails-clean.txt \
+	output/slack-clean.txt \
+	output/jira-clean.txt \
+	output/prompts-clean.txt \
+	> output/all-clean.txt
+
+python chardict.py output/all-clean.txt > output/all.json
 
 # Filter ngrams
 python filter_ngrams.py output/all.json 0.0099 -o output/fma.json
